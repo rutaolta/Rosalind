@@ -1,0 +1,4 @@
+ATT: 2 7 8 9
+GCC: 4
+GCTA: 4
+TATT: 6
