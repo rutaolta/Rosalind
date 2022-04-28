@@ -2,6 +2,11 @@ def get_hamming_distance(dna1, dna2):
     return sum([x != y for x, y in zip(dna1, dna2)])
 
 
+def get_reverse_complement(dna):
+    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A'}
+    return "".join(complement[n] for n in dna[::-1]) 
+
+
 def symbol_to_number(symbol):
     symbols = {'A': 0, 'C': 1, 'G': 2, 'T': 3}
     return symbols[symbol]
