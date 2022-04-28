@@ -60,7 +60,7 @@ def get_neighbors(dna, d):
             for nucleotide in ['A','C','G','T']:
                 neighborhood.add(nucleotide+pattern)
         else:
-            neighborhood.add(dna[1]+pattern)
+            neighborhood.add(dna[0]+pattern)
     return neighborhood
 
 
