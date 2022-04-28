@@ -64,6 +64,18 @@ def get_neighbors(dna, d):
     return neighborhood
 
 
+def get_immediate_neighbors(dna, d):
+    neighborhood = set()
+    for i in range(len(dna)):
+        symbol = dna[i]
+        for nucleotide in 'ACGT'.replace(symbol,''):
+            neighbor = dna[:i] + nucleotide + dna[i+1:]
+            if get_hamming_distance(neighbor, dna) <= d:
+                neighborhood.add(neighbor)
+    neighborhood.add(dna)
+    return neighborhood
+
+
 def get_approximate_pattern_count(seq, pattern, d):
     count = 0
     for i in range(len(seq) - len(pattern) + 1):
