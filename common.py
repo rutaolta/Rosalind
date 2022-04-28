@@ -34,6 +34,15 @@ def number_to_pattern(index, k):
     return prefix_pattern + symbol
 
 
+def compute_frequencies(dna, k):
+    freq_array = [0] * 4**k
+    for i in range(len(dna) - k + 1):
+        pattern = dna[i:i+k]
+        j = pattern_to_number(pattern)
+        freq_array[j] += 1
+    return freq_array
+
+
 def get_neighbors(dna, d):
     if d == 0:
         return {dna}
